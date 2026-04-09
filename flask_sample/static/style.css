@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #0a0e1a 50%, #0a0a0a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: shiftBackground 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shiftBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.particle {
+    position: absolute;
+    background: rgba(0, 102, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 450px;
+}
+
+.register-card {
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 102, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 102, 255, 0.2), 0 0 0 1px rgba(0, 102, 255, 0.4);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 50px;
+    color: #0066ff;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 0%, #0066ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    color: #888;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0066ff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #0066ff;
+    background: rgba(0, 102, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.3);
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+.password-strength {
+    margin-top: 8px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-text {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #888;
+}
+
+.email-check {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #888;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.terms input {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.terms input:checked + .custom-checkbox {
+    background: #0066ff;
+    border-color: #0066ff;
+}
+
+.terms input:checked + .custom-checkbox i {
+    display: block;
+}
+
+.custom-checkbox i {
+    font-size: 12px;
+    color: #fff;
+    display: none;
+}
+
+.terms label {
+    color: #aaa;
+    font-size: 13px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.terms a {
+    color: #0066ff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    color: #3399ff;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.register-btn:hover::before {
+    left: 100%;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.alert-success {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+}
+
+.alert-error {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff4444;
+}
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 30px 20px;
+    }
+    
+    .header h1 {
+        font-size: 28px;
+    }
+}

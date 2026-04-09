@@ -1,0 +1,21 @@
+{
+  "ashwinip120525@gmail.com": {
+    "username": "ashwinip",
+    "email": "ashwinip120525@gmail.com",
+    "password": "658d0e0af5f9cc02d68bc2feb754828d11b52e1fe7b05e33bb560be19eb19141",
+    "registered_at": "2026-04-09T11:49:52.918887"
+  },
+  "ashwini@gmail.com": {
+    "username": "Sam",
+    "email": "ashwini@gmail.com",
+    "password": "961ff93de54e412e59279cd5051b5377474c6de727a6443fd172e9960d33c4d9",
+    "registered_at": "2026-04-09T11:58:21.387347"
+  },
+  "efg@gmail.com": {
+    "username": "efg",
+    "email": "efg@gmail.com",
+    "password": "12f7804992ac84a8b05969b01a08f1971c3c507279c03e8152805aa1cb4bb228",
+    "created_at": "2026-04-09T12:26:10.799602",
+    "is_active": true
+  }
+}
