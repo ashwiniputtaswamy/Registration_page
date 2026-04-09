@@ -1,6 +1,6 @@
 # Registration_page
 Steps to run this flask app:
-1. Download this folder and open it in vs code or any other pythn editor
+1. Download this folder and open it in vs code or any other python editor
 2. In terminal, run this command python app.py
 3. Then open this link, http://127.0.0.1:5000 
 
